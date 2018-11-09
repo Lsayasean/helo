@@ -22,7 +22,19 @@ module.exports = {
         db.post_join().then(results => {
             res.status(200).send(results)
         })
-
+    },
+    singlePost(req, res) {
+        let id = req.body.id
+        let db = req.app.get('db')
+        db.search_id(id).then(results => {
+            res.status(200).send(results)
+        })
+    },
+    getUser(req, res) {
+        let db = req.app.get('db')
+        db.get_post().then(results => {
+            res.status(200).send(results)
+        })
 
     }
 

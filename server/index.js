@@ -15,7 +15,8 @@ massive(CONNECTION_STRING).then(db => app.set('db',db))
 app.post('/register', ctrl.register)
 app.post('/login', ctrl.login)
 app.get('/get-post/', ctrl.getPost)
-app.get('/get-post/:id', ctrl.getPost)
+app.get('/get-post/:id', ctrl.singlePost)
+app.get('/get-post', ctrl.getUser)
 
 
 
